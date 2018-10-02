@@ -132,9 +132,9 @@ namespace XMGDialogue {
 		/// <param name="actionDelegate">The delegate to add to the registered actions.</param>
 		public void RegisterDialogueAction(string actionTag, DialogueActionDelegate actionDelegate) {
 			if (this.HasActionKey(actionTag)) {
-				this.eventActionList[actionTag] = actionDelegate;
-			} else {
 				this.eventActionList[actionTag] += actionDelegate;
+			} else {
+				this.eventActionList.Add (actionTag, actionDelegate);
 			}
 		}
 
