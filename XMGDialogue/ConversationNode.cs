@@ -89,6 +89,15 @@ namespace XMGDialogue {
 		/// </summary>
 		private int dialoguePointer = 0;
 
+		/// <summary>
+		/// Get the current line index that the node is pointing at.
+		/// </summary>
+		public int CurrentLineIndex {
+			get {
+				return this.dialoguePointer;
+			}
+		}
+
 		#endregion
 
 		#region Constructor
