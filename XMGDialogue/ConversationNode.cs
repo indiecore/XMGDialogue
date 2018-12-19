@@ -175,6 +175,20 @@ namespace XMGDialogue {
 		}
 
 		/// <summary>
+		/// Peeks the information for the next line.
+		/// </summary>
+		/// <returns>The next line in the dialogue sequence or or null if there isn't one.</returns>
+		public DialogueLine PeekNextLine() {
+			DialogueLine foundLine = null;
+			int nextPointerIndex = this.dialoguePointer + 1;
+			if (nextPointerIndex < this.dialogue.Count) {
+				foundLine = this.dialogue[nextPointerIndex];
+			}
+
+			return foundLine;
+		}
+
+		/// <summary>
 		/// Gets the current line in this conversation line without advancing the conversation.
 		/// </summary>
 		/// <returns>The current line.</returns>
