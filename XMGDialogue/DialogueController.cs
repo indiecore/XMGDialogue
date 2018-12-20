@@ -267,14 +267,7 @@ namespace XMGDialogue {
 				return;
 			}
 
-			ConversationNode newNode = null;
-			if (!this.conversationNodeMap.TryGetValue(newNodeName, out newNode)) {
-				Debug.LogError(string.Format("{0} is not a conversation node name nor a special string.", newNodeName));
-				return;
-			} else {
-				this.currentNode = newNode;
-				this.context.DisplayDialogue(this.currentNode.GetCurrentLine());
-			}
+			this.StartConversationNode(newNodeName);
 		}
 
 		/// <summary>
