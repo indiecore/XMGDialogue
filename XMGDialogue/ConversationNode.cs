@@ -183,6 +183,18 @@ namespace XMGDialogue {
 		}
 
 		/// <summary>
+		/// Peek the next line in the sequence.
+		/// </summary>
+		/// <returns>The next dialogue line in the sequence or null if there isn't one.</returns>
+		public DialogueLine PeekNextLine() {
+			if (this.HasNextLine()) {
+				return this.dialogue[this.dialoguePointer + 1];
+			} else {
+				return null;
+			}
+		}
+
+		/// <summary>
 		/// Determines whether this instance has a next line.
 		/// </summary>
 		/// <returns><c>true</c> if this instance has a next line; otherwise, <c>false</c>.</returns>
